@@ -1,0 +1,14 @@
+1. Build the project for Win10 using:
+dotnet publish -r win10-x64
+
+2. Copy the folder '\bin\Debug\netcoreapp2.0\win10-x64\publish' to Program files folder
+
+3. Add to context menu.
+	1.Run Regedit
+	2.HKEY_CLASSES_ROOT\Directory\Background\shell if you are administrator
+	2.HKEY_CURRENT_USER\Software\Classes\directory\Background\shell if you are a normal user
+	3.add a new key under "shell", naming it as you want to name the context menu item
+	4.add a new key inside this key, named command (mandatory name)
+	5.edit the "default" property in "command" to myprogrampath\path\path\executable.exe %1 to pass the file path and name of the selected file 
+	  to your custom program
+
